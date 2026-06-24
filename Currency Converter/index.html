@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Easy global conversions</span>
+        <h1>Currency Converter</h1>
+        <p>Convert amounts instantly between 170+ currencies with live exchange rates, swap controls, and quick favorites.</p>
+      </div>
+      <div class="hero-card">
+        <div class="card-header">
+          <div>
+            <p class="small-label">Amount</p>
+            <div class="amount-field">
+              <input id="amount" type="number" min="0" step="0.01" value="100" aria-label="Amount to convert" />
+            </div>
+          </div>
+          <button id="swapBtn" type="button" class="icon-btn" aria-label="Swap currencies">⇄</button>
+        </div>
+
+        <div class="currency-grid">
+          <div class="currency-panel">
+            <label class="small-label" for="fromCurrency">From</label>
+            <div class="currency-select-wrap">
+              <img id="fromFlag" class="flag" src="https://flagsapi.com/US/flat/64.png" alt="From currency flag" />
+              <select id="fromCurrency" name="fromCurrency" aria-label="From currency"></select>
+            </div>
+          </div>
+
+          <div class="currency-panel">
+            <label class="small-label" for="toCurrency">To</label>
+            <div class="currency-select-wrap">
+              <img id="toFlag" class="flag" src="https://flagsapi.com/IN/flat/64.png" alt="To currency flag" />
+              <select id="toCurrency" name="toCurrency" aria-label="To currency"></select>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-card" aria-live="polite">
+          <div class="result-label">Converted amount</div>
+          <div class="result-value" id="resultDisplay">--</div>
+          <div class="meta-line" id="rateInfo">Select currencies to get the latest rate.</div>
+        </div>
+
+        <div class="actions-row">
+          <button id="convertBtn" type="button" class="primary-btn">Convert now</button>
+          <button id="copyBtn" type="button" class="secondary-btn">Copy result</button>
+        </div>
+
+        <div class="quick-actions">
+          <span>Quick picks:</span>
+          <div class="quick-buttons" id="quickButtons"></div>
+        </div>
+
+        <div class="status-line" id="statusMessage"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="code.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
